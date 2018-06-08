@@ -30,7 +30,7 @@ for i in range(5000):
     y_hat = 1/(1 + np.exp(-h))
     loss = np.sum(0.5 * (y_hat - y)**2)
     grad_y_pred = y_hat - y
-    grad_w = -x.T.dot(grad_y_pred * (y_hat - y_hat**2) * (1/y - 1))
+    grad_w = -x.T.dot(grad_y_pred * (y_hat - y_hat**2))
     w2 -= learning_rate * grad_w
     loss_list2.append(loss)
 
